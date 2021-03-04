@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MarsRoverLib\MarsRoverLib.csproj" />
+    <ProjectReference Include="..\Client\MarsRoverBlazor.Client.csproj" />
+    <ProjectReference Include="..\Shared\MarsRoverBlazor.Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>

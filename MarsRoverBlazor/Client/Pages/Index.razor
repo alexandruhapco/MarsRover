@@ -1,0 +1,56 @@
+﻿@page "/"
+
+<style>
+    .myImageVisible {
+        display: block;
+    }
+
+    .myImageHidden {
+        display: none;
+    }
+</style>
+
+<div class="row">
+    <div class="col-auto">
+
+        <div id="phaser-example">
+
+            @for (var i = 0; i < 5; i++) {
+                <div class="row">
+                    @for (int j = 0; j < 5; j++) {
+                        <div class="col-auto" style="
+                        background-color:sandybrown;
+                        border-color: black;
+                        border: 1px solid;
+                        height: 100px;
+                        width: 100px;">
+                            <img class="@imageClass" src="/img/rover.png" style="height:100px;width:100px;" />
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-auto">
+        <input type="text" @bind-value="value" @bind-value:event="oninput" />
+        <button @onclick="() =>{ Foo(); }">Button</button>
+    </div>
+</div>
+
+
+@functions {
+
+    string value;
+    public void Foo() {
+        imageClass = "myImageVisible";
+    }
+}
+
+
+@code {
+    private string imageClass = "myImageHidden";
+
+    private int currentCount = 0;
+
+
+}

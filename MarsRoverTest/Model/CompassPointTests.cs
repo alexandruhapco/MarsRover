@@ -12,30 +12,30 @@ namespace MarsRoverLib.Model.Tests {
 
         [TestMethod]
         public void compassPointWhenAllGoodTest() {
-            var compassPoint = new CompassPoint("N");
+            var compassPoint = new CompassPoint('N');
             Assert.AreEqual(0, compassPoint.index);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Incorrect cardinal compass point")]
         public void compassPointWhenIncorrectCardinalPointTest() {
-            new CompassPoint("Q");
+            new CompassPoint('Q');
         }
 
-        private static List<string> compassList = new List<string>() { "N", "E", "S", "W" };
+        private static List<char> compassList = new List<char>() { 'N', 'E', 'S', 'W' };
 
         [TestMethod]
         public void compassPointWhenTurnSimpleTest() {
-            var compassPoint = new CompassPoint("N");
+            var compassPoint = new CompassPoint('N');
 
             for (int i = 0; i < 3; i++) {
-                compassPoint.turn("R");
+                compassPoint.turn('R');
                 Assert.AreEqual(compassList[i + 1], compassPoint.facingDirection);
                 Assert.AreEqual(i + 1, compassPoint.index);
             }
 
             for (int i = 2; i < -1; i--) {
-                compassPoint.turn("L");
+                compassPoint.turn('L');
                 Assert.AreEqual(compassList[i + 1], compassPoint.facingDirection);
                 Assert.AreEqual(i + 1, compassPoint.index);
             }
@@ -44,12 +44,12 @@ namespace MarsRoverLib.Model.Tests {
 
         [TestMethod]
         public void compassPointWhenTurnAroundTest() {
-            var compassPoint = new CompassPoint("N");
-            compassPoint.turn("L");
-            Assert.AreEqual("W", compassPoint.facingDirection);
+            var compassPoint = new CompassPoint('N');
+            compassPoint.turn('L');
+            Assert.AreEqual('W', compassPoint.facingDirection);
             Assert.AreEqual(3, compassPoint.index);
-            compassPoint.turn("R");
-            Assert.AreEqual("N", compassPoint.facingDirection);
+            compassPoint.turn('R');
+            Assert.AreEqual('N', compassPoint.facingDirection);
             Assert.AreEqual(0, compassPoint.index);
         }
 

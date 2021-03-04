@@ -4,7 +4,29 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-auto">
+
+        <div id="phaser-example">
+
+            @for (var i = 0; i < Model.row; i++) {
+                <div class="row">
+                    @for (int j = 0; j < Model.col; j++) {
+                        <div class="col-auto" style="
+                        background-color:sandybrown;
+                        border-color: black;
+                        border: 1px solid;
+                        height: 100px;
+                        width: 100px;">
+
+                            <img src="~/rover.png" style="height:100px;width:100px;" />
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-auto">
+      
+    </div>
 </div>
