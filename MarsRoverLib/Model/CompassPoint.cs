@@ -9,7 +9,7 @@ namespace MarsRoverLib.Model {
     public class CompassPoint {
 
         //order of dictionary items is important and used for the further logic
-        public static readonly Dictionary<char, Point> compassDict = new Dictionary<char, Point>() {
+        public static readonly IReadOnlyDictionary<char, Point> compassDict = new Dictionary<char, Point>() {
             { 'N', new Point(0, 1) },
             { 'E', new Point(1, 0) },
             { 'S', new Point(0, -1) },

@@ -22,7 +22,7 @@ namespace MarsRoverTest.Model {
             new CompassPoint('Q');
         }
 
-        private static List<char> compassList = new List<char>() { 'N', 'E', 'S', 'W' };
+        private static readonly IReadOnlyList<char> compassList = new List<char>() { 'N', 'E', 'S', 'W' };
 
         [TestMethod]
         public void compassPointWhenTurnSimpleTest() {
