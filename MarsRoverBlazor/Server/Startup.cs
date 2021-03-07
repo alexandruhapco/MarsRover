@@ -1,3 +1,4 @@
+using MarsRoverLib.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -21,6 +22,7 @@ namespace MarsRoverBlazor.Server {
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSingleton<IHoustonService, HoustonService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
