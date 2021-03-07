@@ -19,7 +19,7 @@
     <div class="col-auto">
         <div class="row">
             <input type="text" placeholder="1 2 N|LMLMLMLMM" @bind-value="directiveInput" @bind-value:event="oninput" />
-            <button disabled=@isTaskRunning class="btn btn-primary" @onclick="async () => { await StartRoverExpedition(directiveInput); }">Button</button>
+            <button disabled=@isTaskRunning class="btn btn-primary" @onclick="async () => { await StartRoverExpedition(directiveInput); }">Start Mission</button>
         </div>
 
         <div class="row mt-3">
