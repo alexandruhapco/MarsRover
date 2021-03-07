@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarsRoverLib.Model.Tests {
+namespace MarsRoverTest.Model {
     [TestClass]
     public class CompassPointTests {
 

@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MarsRoverBlazor\Shared\MarsRoverBlazor.Shared.csproj" />
     <ProjectReference Include="..\MarsRoverLib\MarsRoverLib.csproj" />
   </ItemGroup>
 

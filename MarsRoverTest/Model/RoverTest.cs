@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Drawing;
 
-namespace MarsRoverTest {
+namespace MarsRoverTest.Model {
     [TestClass]
     public class RoverTest {
 

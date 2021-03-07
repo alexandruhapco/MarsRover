@@ -24,10 +24,6 @@ namespace MarsRoverLib.Model {
 
         public Point move() {
             point += compassPoint.movePoint;
-            //TODO: move to higher level of abstraction
-            //if(point.X < 0 || point.Y < 0) {
-            //    throw new ArgumentOutOfRangeException("Oh, no! Rover fell over the edge of the platform!");
-            //}
             return point;
         }
 

@@ -29,7 +29,6 @@ namespace MarsRoverLib.Model {
 
         public char turn(char turnDirection) {
             switch (turnDirection) {
-
                 case 'R':
                     index += 1;
                     if (index > compassDict.Count - 1) { index = 0; }
