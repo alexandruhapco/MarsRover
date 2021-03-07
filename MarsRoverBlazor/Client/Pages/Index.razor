@@ -1,30 +1,15 @@
 ﻿@page "/"
-
-<style>
-    .myImageVisible {
-        display: block;
-    }
-
-    .myImageHidden {
-        display: none;
-    }
-</style>
+@inject HttpClient Http
 
 <div class="row">
     <div class="col-auto">
-
-        <div id="phaser-example">
-
-            @for (var i = 0; i < 5; i++) {
+        <div>
+            @for (var i = rows; i >= 0; i--) {
                 <div class="row">
-                    @for (int j = 0; j < 5; j++) {
-                        <div class="col-auto" style="
-                        background-color:sandybrown;
-                        border-color: black;
-                        border: 1px solid;
-                        height: 100px;
-                        width: 100px;">
-                            <img class="@imageClass" src="/img/rover.png" style="height:100px;width:100px;" />
+                    @for (int j = 0; j <= cols; j++) {
+                        <div class="col-auto cell">
+                            <p class="cellIndex">[@j][@i]</p>
+                            <img class="imgProp @( imgVisible[i, j] ? "myImageVisible" : "myImageHidden") @imgRotationArr[i, j]" src="/img/rover.png" />
                         </div>
                     }
                 </div>
@@ -32,25 +17,24 @@
         </div>
     </div>
     <div class="col-auto">
-        <input type="text" @bind-value="value" @bind-value:event="oninput" />
-        <button @onclick="() =>{ Foo(); }">Button</button>
+        <div class="row">
+            <input type="text" placeholder="1 2 N|LMLMLMLMM" @bind-value="directiveInput" @bind-value:event="oninput" />
+            <button disabled=@isTaskRunning class="btn btn-primary" @onclick="async () => { await StartRoverExpedition(directiveInput); }">Button</button>
+        </div>
+
+        <div class="row mt-3">
+            <form @onsubmit="onSubmit">
+                <div class="form-group">
+                    <InputFile class="form-control" disabled=@isTaskRunning OnChange="loadFiles" accept=".csv" />
+                    <button disabled=@isTaskRunning class="btn btn-primary form-control" type="submit">Upload csv File</button>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control">@fileInput</textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-auto">
+        <textarea rows="25" cols="40">@if (@movePath is not null)  @string.Join("\n", @movePath.Select(x => x.ToString()))</textarea>
     </div>
 </div>
-
-
-@functions {
-
-    string value;
-    public void Foo() {
-        imageClass = "myImageVisible";
-    }
-}
-
-
-@code {
-    private string imageClass = "myImageHidden";
-
-    private int currentCount = 0;
-
-
-}

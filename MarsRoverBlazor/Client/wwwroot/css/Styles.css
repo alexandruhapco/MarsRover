@@ -1,0 +1,53 @@
+﻿
+
+
+.cell {
+    background-color: sandybrown;
+    border-color: black;
+    border: 1px solid;
+    height: 100px;
+    width: 100px;
+}
+
+.imgProp {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+
+.imgRotationE {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+.imgRotationW {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+.imgRotationN {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.imgRotationS {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+}
+
+.myImageVisible {
+    display: block;
+}
+
+.myImageHidden {
+    display: none;
+}
+
+.cellIndex {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+}
