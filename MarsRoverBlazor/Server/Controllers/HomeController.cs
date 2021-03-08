@@ -24,15 +24,15 @@ namespace MarsRoverBlazor.Server.Controllers {
         }
 
         [HttpGet]
-        public IEnumerable<Directive> Get(string directives) {
+        public IActionResult Get(string directives) {
             try {
                 var directiveList = houstonService.sendDirective(directives);
-                return houstonService.sendDirective(directives).ToList();
+                return Ok(houstonService.sendDirective(directives).ToList());
             } catch (Exception ex) {
                 _logger.LogError("Error:ProcessError - Type: {Type} Message: {Message}", ex.GetType(), ex.Message);
                 //throw; 
             }
-            return new List<Directive>();
+            return Ok();
         }
 
     }
